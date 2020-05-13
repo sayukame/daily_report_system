@@ -14,21 +14,21 @@ import javax.persistence.Table;
 @Table(name = "employees")
 @NamedQueries({
     @NamedQuery(
-           name = "getAllEmployees",
-           query = "SELECT e FROM Employee AS e ORDER BY e.id DESC"
-           ),
+            name = "getAllEmployees",
+            query = "SELECT e FROM Employee AS e ORDER BY e.id DESC"
+            ),
     @NamedQuery(
-           name = "getEmployeesCount",
-           query = "SELECT COUNT(e) FROM Employee AS e"
-           ),
+            name = "getEmployeesCount",
+            query = "SELECT COUNT(e) FROM Employee AS e"
+            ),
     @NamedQuery(
-           name = "checkRegisteredCode",
-           query = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :code"
-           ),
+            name = "checkRegisteredCode",
+            query = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :code"
+            ),
     @NamedQuery(
-           name = "checkLoginCodeAndPassword",
-           query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code =:code AND e.password = :pass"
-           )
+            name = "checkLoginCodeAndPassword",
+            query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password = :pass"
+            )
 })
 @Entity
 public class Employee {
@@ -50,10 +50,14 @@ public class Employee {
     private Integer admin_flag;
 
     @Column(name = "created_at", nullable = false)
+    private Timestamp created_at;
+
+    @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
     @Column(name = "delete_flag", nullable = false)
     private Integer delete_flag;
+
 
     public Integer getId() {
         return id;
@@ -95,6 +99,14 @@ public class Employee {
         this.admin_flag = admin_flag;
     }
 
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
+    }
+
     public Timestamp getUpdated_at() {
         return updated_at;
     }
@@ -110,6 +122,4 @@ public class Employee {
     public void setDelete_flag(Integer delete_flag) {
         this.delete_flag = delete_flag;
     }
-
-
 }
