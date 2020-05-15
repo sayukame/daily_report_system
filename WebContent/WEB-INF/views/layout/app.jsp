@@ -27,8 +27,10 @@
                 <a href="<c:url value='/logout' />">ログアウト</a>
             </div>
         </c:if>
-    <div id="content">${param.content}</div>
-    <div id="footer">by Taro Kirameki.</div>
+     </div>
+    <div id="content">${param.content}
+    </div>
+    <div id="footer">by Taro Kirameki.
     </div>
     </div>
 </body>

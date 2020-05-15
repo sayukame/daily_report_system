@@ -145,13 +145,6 @@ select{
     display: inline-block;
 }
 
-#header a {
-    color: #eeeeee;
-}
-
-h1 a {
-    color: #eeeeee;
-}
 
 table#report_list th {
     font-weight: bold;
