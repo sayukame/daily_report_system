@@ -21,6 +21,18 @@
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
 
+<label for="work_time">出勤時間</label>
+<input type="number" name="work_time" value="${report.work_time}"/>
+<label for="work_minute">出勤分</label>
+<input type="number" name="work_minute" value="${report.work_minute}" />
+<br /><br />
+
+<label for="leave_time">退勤時間</label>
+<input type="number" name="leave_time" value="${report.leave_time}"/>
+<label for="leave_minute">退勤分</label>
+<input type="number" name="leave_minute" value="${report.leave_minute}" />
+<br /><br />
+
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>
 

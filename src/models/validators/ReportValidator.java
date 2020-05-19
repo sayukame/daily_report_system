@@ -19,6 +19,24 @@ public class ReportValidator {
             errors.add(content_error);
         }
 
+        String work_time_error =_validateWork_time(r.getWork_time());
+        if(!work_time_error.equals("")){
+            errors.add(work_time_error);
+        }
+
+        String work_minute_error = _validateWork_minute(r.getWork_minute());
+        if(!work_minute_error.equals("")){
+            errors.add(work_minute_error);
+        }
+        String leave_time_error =_validateLeave_time(r.getLeave_time());
+        if(!leave_time_error.equals("")){
+            errors.add(leave_time_error);
+        }
+        String leave_minute_error = _validateLeave_minute(r.getLeave_minute());
+        if(!leave_minute_error.equals("")){
+            errors.add(leave_minute_error);
+        }
+
        return errors;
     }
 
@@ -26,6 +44,7 @@ public class ReportValidator {
         if(title == null || title.equals("")) {
             return "タイトルを入力してください。";
         }
+
 
         return "";
     }
@@ -38,5 +57,34 @@ public class ReportValidator {
         return "";
     }
 
+    private static String _validateWork_time(Integer work_time) {
+        if(  work_time>23 ){
+            return "時間を入力してください。";
+    }
+        return"";
+    }
 
+    private static String _validateWork_minute(Integer work_minute) {
+       if( 59<work_minute){
+        return "分を入力してください。";
+    }
+        return"";
+    }
+    private static String _validateLeave_time(Integer leave_time) {
+        if( 23<leave_time) {
+            return "時間を入力してください。";
+        }
+
+        return"";
+    }
+
+    private static String _validateLeave_minute(Integer leave_minute) {
+        if( 59<leave_minute  ) {
+
+        return "分を入力してください";
+        }
+        return"";
+
+    }
 }
+

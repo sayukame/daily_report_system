@@ -59,6 +59,12 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
 
+            r.setWork_time(Integer.parseInt(request.getParameter("work_time")));
+            r.setWork_minute(Integer.parseInt(request.getParameter("work_minute")));
+            r.setLeave_time(Integer.parseInt(request.getParameter("leave_time")));
+            r.setLeave_minute(Integer.parseInt(request.getParameter("leave_minute")));
+
+
             List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {
                 em.close();

@@ -63,6 +63,50 @@ public class Report {
     @Column(name="updated_at", nullable = false)
     private Timestamp updated_at;
 
+    @Column(name="work_time", nullable = false)
+    private Integer work_time;
+
+    @Column(name="work_minute", nullable = false)
+    private Integer work_minute;
+
+    @Column(name="leave_time", nullable = false)
+    private Integer leave_time;
+
+    public Integer getWork_minute() {
+        return work_minute;
+    }
+
+    public void setWork_minute(Integer work_minute) {
+        this.work_minute = work_minute;
+    }
+
+    public Integer getLeave_minute() {
+        return leave_minute;
+    }
+
+    public void setLeave_minute(Integer leave_minute) {
+        this.leave_minute = leave_minute;
+    }
+
+    @Column(name="leave_mimute",nullable = false)
+    private Integer leave_minute;
+
+    public Integer getWork_time() {
+        return work_time;
+    }
+
+    public void setWork_time(Integer work_time) {
+        this.work_time = work_time;
+    }
+
+    public Integer getLeave_time() {
+        return leave_time;
+    }
+
+    public void setLeave_time(Integer leave_time) {
+        this.leave_time = leave_time;
+    }
+
     public Integer getId() {
         return id;
     }
